@@ -3,9 +3,7 @@ import bostonreactlogo from './boston-react-logo.jpg';
 import './App.css';
 import $ from 'jquery'
 
-
-const EVENT_ID = '238471436'
-const SIGNED_URL = `https://api.meetup.com/ReactJS-Boston/events/${EVENT_ID}/rsvps?photo-host=public&sig_id=33956102&sig=87dd5c75fc1ca4b25a9bc1f781afe92c8e9408e8`
+const URL = `https://api.meetup.com/ReactJS-Boston/events/239572732/rsvps?photo-host=public&sig_id=33956102&sig=a4d43e554b72e3da1435c24c32be7d5cdbc10f17`
 
 class App extends Component {
   state = {
@@ -18,7 +16,7 @@ class App extends Component {
     $.ajax({
       dataType: 'jsonp',
       method: 'get',
-      url: SIGNED_URL,
+      url: URL,
       success: (result) => {
         const rsvps = result.data.map((rsvp) => rsvp.member.name)
         this.setState({ rsvps })

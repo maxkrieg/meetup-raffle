@@ -44,7 +44,6 @@ class App extends Component {
   drumRoll = person => {
     this.setState({ drum: true })
     const winner = person
-    const _this = this
     setTimeout(() => {
       this.setState({ winner, drum: false })
     }, 3000)
